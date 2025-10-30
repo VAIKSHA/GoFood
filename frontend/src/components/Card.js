@@ -62,12 +62,29 @@ export default function Card(props) {
     return (
         <div>
             <div className='d-flex align-items-center justify-content-center'>
-                <div className="card mt-3 rounded-4 shadow-lg" style={{ width: "18rem", maxHeight: "360px" }}>
+                <div className="card mt-3 rounded-4 shadow-lg" style={{ 
+                    width: "18rem", 
+                    maxHeight: "360px",
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer'
+                }} onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
+                }} onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }}>
                     <img
                         src={props.fooditem.img}
                         className="card-img-top rounded-4 shadow-lg"
                         alt={props.fooditem.name}
-                        style={{ height: "150px", objectFit: "fill" }}
+                        style={{ 
+                            height: "150px", 
+                            objectFit: "fill",
+                            transition: 'transform 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                     />
                     <div className="card-body">
                         <h5 className="card-title">{props.fooditem.name}</h5>
@@ -103,6 +120,20 @@ export default function Card(props) {
                             className='btn btn-success ms-2 d-flex align-items-center justify-content-center'
                             onClick={handleAddToCart}
                             disabled={isMaxLimitReached}
+                            style={{
+                                transition: 'all 0.3s ease',
+                                borderRadius: '20px'
+                            }}
+                            onMouseEnter={(e) => {
+                                if (!isMaxLimitReached) {
+                                    e.target.style.transform = 'scale(1.05)';
+                                    e.target.style.boxShadow = '0 4px 15px rgba(40, 167, 69, 0.4)';
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.transform = 'scale(1)';
+                                e.target.style.boxShadow = 'none';
+                            }}
                         >
                             {isMaxLimitReached ? "Limit Reached" : "Add to Cart"}
                         </button>
