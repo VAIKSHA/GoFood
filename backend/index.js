@@ -1,6 +1,8 @@
 const express = require("express");
+require('dotenv').config();
+
 const app = express()    // creating instance of express
-const port = 4000
+const port = process.env.PORT || 4000
 const mongoDB = require("./db")
 const cors = require("cors");   // to handle cross origin resource sharing
 

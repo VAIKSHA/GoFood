@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
-const mongoURI = 'mongodb://localhost:27017/gofood';  
-// MongoDB connection URI & 27017 is default port number for MongoDB
+require('dotenv').config();
+
+const mongoURI = process.env.MONGODB_URI;
+// MongoDB Atlas connection URI
 
 const mongoDB = async () => {
     try {
