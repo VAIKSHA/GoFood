@@ -25,7 +25,7 @@ export default function Login() {
 
     try {
       // request to the backend to verify login credentials
-      const response = await fetch("http://localhost:4000/api/loginuser", {
+      const response = await fetch("https://gofood-grr4.onrender.com/api/loginuser", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

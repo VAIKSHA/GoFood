@@ -27,7 +27,7 @@ export default function Signup() {
 
         try {
             // sending POST request to backend api to signup new user with their data
-            const response = await fetch('http://localhost:4000/api/createuser', {
+            const response = await fetch('https://gofood-grr4.onrender.com/api/createuser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',  // content type to json bcz, we are sending json data
