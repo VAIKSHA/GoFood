@@ -42,7 +42,7 @@ export default function Home() {
     const [fooditem, setFooditem] = useState([])
 
     const loadData = async () => {
-        let response = await fetch("https://gofood-grr4.onrender.com//foodData", {
+        let response = await fetch("https://gofood-grr4.onrender.com/foodData", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
