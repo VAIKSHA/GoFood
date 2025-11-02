@@ -10,7 +10,9 @@ mongoDB();
 
 // cors a specific origin at --> localhost:300 with all methods
 const corsOptions = {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000",
+        "https://gilded-pavlova-6f3f42.netlify.app"
+    ],
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 }
